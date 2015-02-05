@@ -1,0 +1,7 @@
+<ul>
+  {{#each todo in model}}
+    <li><input type="checkbox" {{bind-attr checked=todo.complete}}>{{todo.note.title}}</li>
+  {{/each}}
+  <li>{{input action="addTodo" placeholder="New task..." value=newTodo}}</li>
+</ul>
+{{outlet}}
