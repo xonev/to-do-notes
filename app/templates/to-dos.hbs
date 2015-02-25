@@ -1,7 +1,22 @@
-<ul>
-  {{#each todo in model}}
-    <li><input type="checkbox" {{bind-attr checked=todo.complete}}>{{todo.note.title}}</li>
-  {{/each}}
-  <li>{{input action="addTodo" placeholder="New task..." value=newTodo}}</li>
-</ul>
+<div class="row">
+  <div class="small-12 medium-9 large-6 columns">
+    <ul class="todos">
+      {{#each todo in model}}
+        <li class="row">
+          <div class="small-12 columns">
+            <label>
+              <input type="checkbox" {{bind-attr checked=todo.complete}}>
+              {{todo.note.title}}
+            </label>
+          </div>
+        </li>
+      {{/each}}
+      <li class="row">
+        <div class="small-12 columns">
+          {{input action="addTodo" placeholder="New task..." value=newTodo}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 {{outlet}}
