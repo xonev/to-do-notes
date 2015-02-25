@@ -3,11 +3,14 @@
     <ul class="todos">
       {{#each todo in model}}
         <li class="row">
-          <div class="small-12 columns">
+          <div class="small-10 columns">
             <label>
               <input type="checkbox" {{bind-attr checked=todo.complete}}>
               {{todo.note.title}}
             </label>
+          </div>
+          <div class="small-2 columns">
+            {{#link-to 'to-do' todo}}{{fa-icon "external-link" pull="right"}}{{/link-to}}
           </div>
         </li>
       {{/each}}
