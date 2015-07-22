@@ -17,3 +17,14 @@ export function fetchTodo(id){
   var todos = fetch('to-dos', []);
   return todos.findBy('id', id);
 }
+
+export function saveTodo(todo){
+  var todos = fetch('to-dos', []);
+  todos = todos.map(function(oldTodo){
+    if (oldTodo.id === todo.id) {
+      return todo;
+    }
+    return oldTodo;
+  });
+  save('to-dos', todos);
+}
